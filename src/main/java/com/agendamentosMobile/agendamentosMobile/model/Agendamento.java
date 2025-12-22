@@ -1,6 +1,7 @@
 package com.agendamentosMobile.agendamentosMobile.model;
 
 import jakarta.persistence.*;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Date;
 import java.util.Objects;
@@ -14,7 +15,9 @@ public class Agendamento {
     @ManyToOne
     @JoinColumn(name = "cliente_id_cliente")
     private Cliente cliente;
+    @NotNull
     private String servico;
+    @NotNull
     private Date data;
 
     public Agendamento() {}

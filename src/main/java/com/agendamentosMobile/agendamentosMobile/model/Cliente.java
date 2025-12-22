@@ -1,6 +1,7 @@
 package com.agendamentosMobile.agendamentosMobile.model;
 
 import jakarta.persistence.*;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Objects;
 
@@ -10,7 +11,9 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCliente;
+    @NotNull
     private String nomeCliente;
+    @NotNull
     private String celularCliente;
     private String emailCliente;
 
