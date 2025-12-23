@@ -10,8 +10,7 @@ public class ClienteRequest {
     private String nomeCliente;
     @NotNull
     private String celularCliente;
-    @Email
-    @NotBlank(message="Email inválido!")
+    @Email(message="E-mail inválido!")
     private String emailCliente;
 
     public ClienteRequest(Long idCliente, String nomeCliente, String celularCliente, String emailCliente) {
