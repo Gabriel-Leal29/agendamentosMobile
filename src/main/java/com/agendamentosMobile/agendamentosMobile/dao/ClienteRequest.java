@@ -8,7 +8,7 @@ public class ClienteRequest {
     private Long idCliente;
     @NotNull
     private String nomeCliente;
-    @NotNull
+    @NotBlank
     private String celularCliente;
     @Email(message="E-mail inválido!")
     private String emailCliente;

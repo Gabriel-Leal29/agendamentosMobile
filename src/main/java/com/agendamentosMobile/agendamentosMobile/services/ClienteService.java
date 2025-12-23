@@ -26,6 +26,10 @@ public class ClienteService {
             throw new RuntimeException("Email já cadastrado");
         }
 
+        if(clienteRepository.existsByEmail(clienteRequest.getCelularCliente())){
+            throw new RuntimeException("Celular ja cadastrado");
+        }
+
 
         return ClienteMapper.toResponse(clienteRepository.save(cliente));
     }
