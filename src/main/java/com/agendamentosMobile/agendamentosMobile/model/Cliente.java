@@ -10,11 +10,15 @@ import java.util.Objects;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_cliente")
     private Long idCliente;
     @NotNull
+    @Column(name="nome_cliente")
     private String nomeCliente;
     @NotNull
+    @Column(name="celular_cliente")
     private String celularCliente;
+    @Column(name="email_cliente")
     private String emailCliente;
 
     public Cliente() {};

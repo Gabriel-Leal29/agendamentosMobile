@@ -11,13 +11,16 @@ import java.util.Objects;
 public class Agendamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_agendamento")
     private Long idAgendamento;
     @ManyToOne
-    @JoinColumn(name = "cliente_id_cliente")
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
     @NotNull
+    @Column(name="servico")
     private String servico;
     @NotNull
+    @Column(name="data_agendamento")
     private Date data;
 
     public Agendamento() {}
