@@ -1,5 +1,7 @@
 package com.agendamentosMobile.agendamentosMobile.dao;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import org.antlr.v4.runtime.misc.NotNull;
 
 public class ClienteRequest {
@@ -8,6 +10,8 @@ public class ClienteRequest {
     private String nomeCliente;
     @NotNull
     private String celularCliente;
+    @Email
+    @NotBlank(message="Email inválido!")
     private String emailCliente;
 
     public ClienteRequest(Long idCliente, String nomeCliente, String celularCliente, String emailCliente) {
