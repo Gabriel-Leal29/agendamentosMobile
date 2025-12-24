@@ -18,6 +18,7 @@ public class ClienteMapper {
     public static ClienteResponse toResponse(Cliente cliente) {
         ClienteResponse novoClienteResponse = new ClienteResponse();
 
+        novoClienteResponse.setClienteId(cliente.getidCliente());
         novoClienteResponse.setCelularCliente(cliente.getCelularCliente());
         novoClienteResponse.setNomeCliente(cliente.getNomeCliente());
         novoClienteResponse.setEmailCliente(cliente.getEmailCliente());

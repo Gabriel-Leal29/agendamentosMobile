@@ -5,6 +5,9 @@ import org.hibernate.annotations.NotFound;
 
 public class ClienteResponse {
     @NotNull
+    private Long clienteId;
+
+    @NotNull
     private String nomeCliente;
     @NotNull
     private String celularCliente;
@@ -12,10 +15,19 @@ public class ClienteResponse {
 
     public ClienteResponse(){};
 
-    public ClienteResponse(String nomeCliente, String celularCliente, String emailCliente) {
+    public ClienteResponse(Long clienteId, String nomeCliente, String celularCliente, String emailCliente) {
+        this.clienteId = clienteId;
         this.nomeCliente = nomeCliente;
         this.celularCliente = celularCliente;
         this.emailCliente = emailCliente;
+    }
+
+    public Long getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(Long clienteId) {
+        this.clienteId = clienteId;
     }
 
     public String getNomeCliente() {
