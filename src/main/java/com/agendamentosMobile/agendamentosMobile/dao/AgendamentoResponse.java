@@ -3,6 +3,7 @@ package com.agendamentosMobile.agendamentosMobile.dao;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.hibernate.annotations.NotFound;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class AgendamentoResponse {
@@ -13,11 +14,11 @@ public class AgendamentoResponse {
     @NotNull
     public String servicoAgendamento;
     @NotNull
-    public Date dataAgendamento;
+    public LocalDateTime dataAgendamento;
 
     public AgendamentoResponse(){}
 
-    public AgendamentoResponse(Long idAgendamento, String nomeClienteAgendamento, String servicoAgendamento, Date dataAgendamento) {
+    public AgendamentoResponse(Long idAgendamento, String nomeClienteAgendamento, String servicoAgendamento, LocalDateTime dataAgendamento) {
         this.idAgendamento = idAgendamento;
         this.nomeClienteAgendamento = nomeClienteAgendamento;
         this.servicoAgendamento = servicoAgendamento;
@@ -48,11 +49,11 @@ public class AgendamentoResponse {
         this.servicoAgendamento = servicoAgendamento;
     }
 
-    public Date getDataAgendamento() {
+    public LocalDateTime getDataAgendamento() {
         return dataAgendamento;
     }
 
-    public void setDataAgendamento(Date dataAgendamento) {
+    public void setDataAgendamento(LocalDateTime dataAgendamento) {
         this.dataAgendamento = dataAgendamento;
     }
 }

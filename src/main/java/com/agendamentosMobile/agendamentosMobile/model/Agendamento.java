@@ -1,8 +1,11 @@
 package com.agendamentosMobile.agendamentosMobile.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
+import org.springframework.cglib.core.Local;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
 
@@ -21,10 +24,11 @@ public class Agendamento {
     private String servico;
     @NotNull
     @Column(name="data_agendamento")
-    private Date data;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    private LocalDateTime data;
 
     public Agendamento() {}
-    public Agendamento(Long idAgendamento, Cliente cliente, String servico, Date data) {
+    public Agendamento(Long idAgendamento, Cliente cliente, String servico, LocalDateTime data) {
         this.idAgendamento = idAgendamento;
         this.cliente = cliente;
         this.servico = servico;
@@ -51,11 +55,11 @@ public class Agendamento {
         this.servico = servico;
     }
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 

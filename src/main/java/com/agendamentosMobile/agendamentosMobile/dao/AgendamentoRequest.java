@@ -3,6 +3,7 @@ package com.agendamentosMobile.agendamentosMobile.dao;
 import com.agendamentosMobile.agendamentosMobile.model.Cliente;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class AgendamentoRequest {
@@ -11,11 +12,11 @@ public class AgendamentoRequest {
     @NotNull
     private String servico;
     @NotNull
-    private Date data;
+    private LocalDateTime data;
 
     public AgendamentoRequest(){}
 
-    public AgendamentoRequest(Long clienteId, String servico, Date data) {
+    public AgendamentoRequest(Long clienteId, String servico, LocalDateTime data) {
         this.clienteId = clienteId;
         this.servico = servico;
         this.data = data;
@@ -37,11 +38,11 @@ public class AgendamentoRequest {
         this.servico = servico;
     }
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 }
