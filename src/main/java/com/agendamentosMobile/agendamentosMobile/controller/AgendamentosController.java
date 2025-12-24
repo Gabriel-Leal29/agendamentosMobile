@@ -22,10 +22,10 @@ public class AgendamentosController {
     private AgendamentoRepository agendamentoRepository;
 
     @PostMapping
-    public ResponseEntity<AgendamentoRequest> criarAgendamento(AgendamentoRequest agendamentoRequest) {
+    public ResponseEntity<AgendamentoResponse> criarAgendamento(@RequestBody AgendamentoRequest agendamentoRequest) {
         AgendamentoResponse agendamentoResponse = agendamentoService.salvarAgendamento(agendamentoRequest);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(agendamentoRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body(agendamentoResponse);
     }
 
     @GetMapping

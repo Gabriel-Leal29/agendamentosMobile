@@ -19,6 +19,7 @@ public class AgendamentoMapper {
     public static AgendamentoResponse toResponse(Agendamento agendamento){
         AgendamentoResponse novoAgendamentoResponse = new AgendamentoResponse();
 
+        novoAgendamentoResponse.setIdAgendamento(agendamento.getIdAgendamento());
         novoAgendamentoResponse.setDataAgendamento(agendamento.getData());
         novoAgendamentoResponse.setServicoAgendamento(agendamento.getServico());
         novoAgendamentoResponse.setNomeClienteAgendamento(agendamento.getCliente().getNomeCliente());
