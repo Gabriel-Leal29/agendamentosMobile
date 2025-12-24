@@ -26,6 +26,11 @@ public class AgendamentoService {
         Cliente cliente = clienteRepository.findById(agendamentoRequest.getClienteId())
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
 
+        //verificação de agendamento no passado
+        if(agendamentoRequest.getData().isBefore(LocalDateTime.now())) {
+            throw new RuntimeException("Não é permitido agendamento no passado!");
+        }
+
         //verifica o horário
         if(agendamentoRepository.existsByData(LocalDateTime.from(agendamentoRequest.getData()))){
             throw new RuntimeException("Já existe um agendamento para este horário!");

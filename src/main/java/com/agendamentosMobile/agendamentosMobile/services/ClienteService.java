@@ -22,14 +22,10 @@ public class ClienteService {
     public ClienteResponse salvarCliente(ClienteRequest clienteRequest) {
         Cliente cliente = ClienteMapper.toEntity(clienteRequest);
 
-        if (clienteRepository.existsByEmailCliente(clienteRequest.getEmailCliente())) {
-            throw new RuntimeException("Email já cadastrado");
-        }
-
+        //verifica se tem cliente com esse celular ja cadastrado
         if(clienteRepository.existsByCelularCliente(clienteRequest.getCelularCliente())){
             throw new RuntimeException("Celular ja cadastrado");
         }
-
 
         return ClienteMapper.toResponse(clienteRepository.save(cliente));
     }
