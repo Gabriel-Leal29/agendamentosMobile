@@ -1,7 +1,9 @@
 package com.agendamentosMobile.agendamentosMobile.dao;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.hibernate.annotations.NotFound;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -14,6 +16,7 @@ public class AgendamentoResponse {
     @NotNull
     public String servicoAgendamento;
     @NotNull
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     public LocalDateTime dataAgendamento;
 
     public AgendamentoResponse(){}

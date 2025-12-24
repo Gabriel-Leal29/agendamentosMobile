@@ -1,10 +1,9 @@
 package com.agendamentosMobile.agendamentosMobile.dao;
 
-import com.agendamentosMobile.agendamentosMobile.model.Cliente;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class AgendamentoRequest {
     @NotNull
@@ -12,6 +11,7 @@ public class AgendamentoRequest {
     @NotNull
     private String servico;
     @NotNull
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime data;
 
     public AgendamentoRequest(){}
@@ -19,6 +19,14 @@ public class AgendamentoRequest {
     public AgendamentoRequest(Long clienteId, String servico, LocalDateTime data) {
         this.clienteId = clienteId;
         this.servico = servico;
+        this.data = data;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
@@ -36,13 +44,5 @@ public class AgendamentoRequest {
 
     public void setServico(String servico) {
         this.servico = servico;
-    }
-
-    public LocalDateTime getData() {
-        return data;
-    }
-
-    public void setData(LocalDateTime data) {
-        this.data = data;
     }
 }

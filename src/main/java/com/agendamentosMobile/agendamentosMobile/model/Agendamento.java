@@ -3,10 +3,8 @@ package com.agendamentosMobile.agendamentosMobile.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity

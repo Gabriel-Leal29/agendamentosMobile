@@ -10,13 +10,14 @@ import com.agendamentosMobile.agendamentosMobile.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class AgendamentoService {
     @Autowired
     private AgendamentoRepository agendamentoRepository;
-
     @Autowired
     private ClienteRepository clienteRepository;
 
@@ -24,6 +25,11 @@ public class AgendamentoService {
         //buscando o cliente pelo ID
         Cliente cliente = clienteRepository.findById(agendamentoRequest.getClienteId())
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+
+        //verifica o horário
+        if(agendamentoRepository.existsByData(LocalDateTime.from(agendamentoRequest.getData()))){
+            throw new RuntimeException("Já existe um agendamento para este horário!");
+        }
 
         Agendamento agendamento = AgendamentoMapper.toEntity(agendamentoRequest, cliente);
 
