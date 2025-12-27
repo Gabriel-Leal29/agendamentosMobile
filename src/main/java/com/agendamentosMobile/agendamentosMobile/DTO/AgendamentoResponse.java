@@ -1,29 +1,26 @@
-package com.agendamentosMobile.agendamentosMobile.dao;
+package com.agendamentosMobile.agendamentosMobile.DTO;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.antlr.v4.runtime.misc.NotNull;
-import org.hibernate.annotations.NotFound;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class AgendamentoResponse {
     @NotNull
     private Long idAgendamento;
     @NotNull
-    public String nomeClienteAgendamento;
+    private ClienteResponse cliente;
     @NotNull
-    public String servicoAgendamento;
+    private String servicoAgendamento;
     @NotNull
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-    public LocalDateTime dataAgendamento;
+    private LocalDateTime dataAgendamento;
 
     public AgendamentoResponse(){}
 
-    public AgendamentoResponse(Long idAgendamento, String nomeClienteAgendamento, String servicoAgendamento, LocalDateTime dataAgendamento) {
+    public AgendamentoResponse(Long idAgendamento, ClienteResponse cliente, String servicoAgendamento, LocalDateTime dataAgendamento) {
         this.idAgendamento = idAgendamento;
-        this.nomeClienteAgendamento = nomeClienteAgendamento;
+        this.cliente = cliente;
         this.servicoAgendamento = servicoAgendamento;
         this.dataAgendamento = dataAgendamento;
     }
@@ -36,12 +33,12 @@ public class AgendamentoResponse {
         this.idAgendamento = idAgendamento;
     }
 
-    public String getNomeClienteAgendamento() {
-        return nomeClienteAgendamento;
+    public ClienteResponse getCliente() {
+        return cliente;
     }
 
-    public void setNomeClienteAgendamento(String nomeClienteAgendamento) {
-        this.nomeClienteAgendamento = nomeClienteAgendamento;
+    public void setCliente(ClienteResponse cliente) {
+        this.cliente = cliente;
     }
 
     public String getServicoAgendamento() {

@@ -1,7 +1,7 @@
 package com.agendamentosMobile.agendamentosMobile.services;
 
-import com.agendamentosMobile.agendamentosMobile.dao.AgendamentoRequest;
-import com.agendamentosMobile.agendamentosMobile.dao.AgendamentoResponse;
+import com.agendamentosMobile.agendamentosMobile.DTO.AgendamentoRequest;
+import com.agendamentosMobile.agendamentosMobile.DTO.AgendamentoResponse;
 import com.agendamentosMobile.agendamentosMobile.mapper.AgendamentoMapper;
 import com.agendamentosMobile.agendamentosMobile.model.Agendamento;
 import com.agendamentosMobile.agendamentosMobile.model.Cliente;
@@ -10,7 +10,6 @@ import com.agendamentosMobile.agendamentosMobile.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.agendamentosMobile.agendamentosMobile.controller;
 
-import com.agendamentosMobile.agendamentosMobile.dao.ClienteRequest;
-import com.agendamentosMobile.agendamentosMobile.dao.ClienteResponse;
+import com.agendamentosMobile.agendamentosMobile.DTO.ClienteRequest;
+import com.agendamentosMobile.agendamentosMobile.DTO.ClienteResponse;
 import com.agendamentosMobile.agendamentosMobile.services.ClienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

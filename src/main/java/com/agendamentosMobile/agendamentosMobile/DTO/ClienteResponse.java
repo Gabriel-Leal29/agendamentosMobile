@@ -1,7 +1,6 @@
-package com.agendamentosMobile.agendamentosMobile.dao;
+package com.agendamentosMobile.agendamentosMobile.DTO;
 
 import org.antlr.v4.runtime.misc.NotNull;
-import org.hibernate.annotations.NotFound;
 
 public class ClienteResponse {
     @NotNull

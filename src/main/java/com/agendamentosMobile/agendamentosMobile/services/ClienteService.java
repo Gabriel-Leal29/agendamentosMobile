@@ -1,7 +1,7 @@
 package com.agendamentosMobile.agendamentosMobile.services;
 
-import com.agendamentosMobile.agendamentosMobile.dao.ClienteRequest;
-import com.agendamentosMobile.agendamentosMobile.dao.ClienteResponse;
+import com.agendamentosMobile.agendamentosMobile.DTO.ClienteRequest;
+import com.agendamentosMobile.agendamentosMobile.DTO.ClienteResponse;
 import com.agendamentosMobile.agendamentosMobile.mapper.ClienteMapper;
 import com.agendamentosMobile.agendamentosMobile.model.Cliente;
 import com.agendamentosMobile.agendamentosMobile.repository.ClienteRepository;

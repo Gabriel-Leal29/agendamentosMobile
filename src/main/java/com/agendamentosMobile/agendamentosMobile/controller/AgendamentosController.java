@@ -1,10 +1,8 @@
 package com.agendamentosMobile.agendamentosMobile.controller;
 
-import com.agendamentosMobile.agendamentosMobile.dao.AgendamentoRequest;
-import com.agendamentosMobile.agendamentosMobile.dao.AgendamentoResponse;
-import com.agendamentosMobile.agendamentosMobile.model.Agendamento;
+import com.agendamentosMobile.agendamentosMobile.DTO.AgendamentoRequest;
+import com.agendamentosMobile.agendamentosMobile.DTO.AgendamentoResponse;
 import com.agendamentosMobile.agendamentosMobile.repository.AgendamentoRepository;
-import com.agendamentosMobile.agendamentosMobile.repository.ClienteRepository;
 import com.agendamentosMobile.agendamentosMobile.services.AgendamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

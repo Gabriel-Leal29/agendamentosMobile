@@ -1,4 +1,4 @@
-package com.agendamentosMobile.agendamentosMobile.dao;
+package com.agendamentosMobile.agendamentosMobile.DTO;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.antlr.v4.runtime.misc.NotNull;

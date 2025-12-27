@@ -1,4 +1,4 @@
-package com.agendamentosMobile.agendamentosMobile.dao;
+package com.agendamentosMobile.agendamentosMobile.DTO;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

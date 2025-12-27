@@ -1,7 +1,7 @@
 package com.agendamentosMobile.agendamentosMobile.mapper;
 
-import com.agendamentosMobile.agendamentosMobile.dao.AgendamentoRequest;
-import com.agendamentosMobile.agendamentosMobile.dao.AgendamentoResponse;
+import com.agendamentosMobile.agendamentosMobile.DTO.AgendamentoRequest;
+import com.agendamentosMobile.agendamentosMobile.DTO.AgendamentoResponse;
 import com.agendamentosMobile.agendamentosMobile.model.Agendamento;
 import com.agendamentosMobile.agendamentosMobile.model.Cliente;
 
@@ -17,12 +17,13 @@ public class AgendamentoMapper {
     }
 
     public static AgendamentoResponse toResponse(Agendamento agendamento){
+        ClienteMapper clienteMapper = new ClienteMapper();
         AgendamentoResponse novoAgendamentoResponse = new AgendamentoResponse();
 
         novoAgendamentoResponse.setIdAgendamento(agendamento.getIdAgendamento());
         novoAgendamentoResponse.setDataAgendamento(agendamento.getData());
         novoAgendamentoResponse.setServicoAgendamento(agendamento.getServico());
-        novoAgendamentoResponse.setNomeClienteAgendamento(agendamento.getCliente().getNomeCliente());
+        novoAgendamentoResponse.setCliente(clienteMapper.toResponse(agendamento.getCliente()));
 
         return novoAgendamentoResponse;
     }
