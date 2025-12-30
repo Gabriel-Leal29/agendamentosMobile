@@ -19,10 +19,6 @@ public class ClienteService {
     @Autowired
     private AgendamentoRepository agendamentoRepository;
 
-    public ClienteService(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
-    }
-
     public ClienteResponse salvarCliente(ClienteRequest clienteRequest) {
         Cliente cliente = ClienteMapper.toEntity(clienteRequest);
 
@@ -40,6 +36,17 @@ public class ClienteService {
             throw new RuntimeException("Cliente possui agendamentos e não pode ser deletado");
         }
         clienteRepository.deleteById(id);
+    }
+
+    public void editarCliente(Long id, ClienteRequest clienteRequest) {
+        Cliente cliente = clienteRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado")); //verifica se existe um cliente com esse ID
+
+        cliente.setNomeCliente(clienteRequest.getNomeCliente());
+        cliente.setEmailCliente(clienteRequest.getEmailCliente());
+        cliente.setCelularCliente(clienteRequest.getCelularCliente());
+
+        clienteRepository.save(cliente);
     }
 
     public List<ClienteResponse> listarClientes() {

@@ -2,6 +2,8 @@ package com.agendamentosMobile.agendamentosMobile.controller;
 
 import com.agendamentosMobile.agendamentosMobile.DTO.ClienteRequest;
 import com.agendamentosMobile.agendamentosMobile.DTO.ClienteResponse;
+import com.agendamentosMobile.agendamentosMobile.model.Cliente;
+import com.agendamentosMobile.agendamentosMobile.repository.ClienteRepository;
 import com.agendamentosMobile.agendamentosMobile.services.ClienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ import java.util.List;
 public class ClienteController {
     @Autowired
     private ClienteService clienteService;
+    @Autowired
+    private ClienteRepository clienteRepository;
 
     @PostMapping
     public ResponseEntity<ClienteResponse> criarCliente(@Valid @RequestBody ClienteRequest clienteRequest) {
@@ -35,4 +39,12 @@ public class ClienteController {
     public void deletarCliente(@PathVariable Long id) {
         clienteService.deletarCliente(id);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ClienteResponse> atualizarCliente(@PathVariable Long id, @RequestBody ClienteRequest clienteRequest) {
+        clienteService.editarCliente(id, clienteRequest);
+
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
 }
