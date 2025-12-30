@@ -44,7 +44,7 @@ public class AgendamentoService {
         return agendamentoRepository.findAll().stream().map(AgendamentoMapper::toResponse).toList();
     }
 
-    public void DeletarAgendamento(Long id) {
+    public void deletarAgendamento(Long id) {
         agendamentoRepository.deleteById(id);
     }
 

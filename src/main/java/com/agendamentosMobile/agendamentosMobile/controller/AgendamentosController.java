@@ -32,8 +32,8 @@ public class AgendamentosController {
     }
 
     @DeleteMapping("/{id}")
-    public void deletarAgendamento(@PathVariable Long idCliente) {
-        agendamentoService.DeletarAgendamento(idCliente);
+    public void deletarAgendamento(@PathVariable Long id) {
+        agendamentoService.deletarAgendamento(id);
     }
 
 }
