@@ -16,8 +16,6 @@ import java.util.List;
 public class AgendamentosController {
     @Autowired
     private AgendamentoService agendamentoService;
-    @Autowired
-    private AgendamentoRepository agendamentoRepository;
 
     @PostMapping
     public ResponseEntity<AgendamentoResponse> criarAgendamento(@RequestBody AgendamentoRequest agendamentoRequest) {
@@ -34,8 +32,8 @@ public class AgendamentosController {
     }
 
     @DeleteMapping("/{id}")
-    public void deletarAgendamento(@PathVariable Long id) {
-        agendamentoRepository.deleteById(id);
+    public void deletarAgendamento(@PathVariable Long idCliente) {
+        agendamentoService.DeletarAgendamento(idCliente);
     }
 
 }

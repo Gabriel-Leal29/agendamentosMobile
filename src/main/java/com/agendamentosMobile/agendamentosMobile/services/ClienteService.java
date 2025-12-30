@@ -4,6 +4,7 @@ import com.agendamentosMobile.agendamentosMobile.DTO.ClienteRequest;
 import com.agendamentosMobile.agendamentosMobile.DTO.ClienteResponse;
 import com.agendamentosMobile.agendamentosMobile.mapper.ClienteMapper;
 import com.agendamentosMobile.agendamentosMobile.model.Cliente;
+import com.agendamentosMobile.agendamentosMobile.repository.AgendamentoRepository;
 import com.agendamentosMobile.agendamentosMobile.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ import java.util.List;
 public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
+
+    @Autowired
+    private AgendamentoRepository agendamentoRepository;
 
     public ClienteService(ClienteRepository clienteRepository) {
         this.clienteRepository = clienteRepository;
@@ -31,6 +35,10 @@ public class ClienteService {
     }
 
     public void deletarCliente(Long id) {
+        boolean hasAgendamentos = agendamentoRepository.existsByClienteIdCliente(id);
+        if (hasAgendamentos) {
+            throw new RuntimeException("Cliente possui agendamentos e não pode ser deletado");
+        }
         clienteRepository.deleteById(id);
     }
 

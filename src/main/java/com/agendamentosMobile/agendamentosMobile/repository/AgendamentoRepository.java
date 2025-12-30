@@ -8,4 +8,6 @@ import java.time.LocalDateTime;
 
 public interface AgendamentoRepository extends JpaRepository<Agendamento, Long> {
     boolean existsByData(LocalDateTime data); //verifica se existe um agendamento com mesma data
+
+    boolean existsByClienteIdCliente(Long idCliente);
 }
